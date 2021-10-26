@@ -132,10 +132,11 @@ def generate_cert(*args):
         return
 
     action_config = hookenv.action_get()
+    sans_list=action_config.get('sans')
     new_crt = vault_pki.generate_certificate(
         cert_type = 'server',
         common_name=action_config.get('common-name'),
-        sans=action_config.get('sans'),
+        sans=list(sans_list.split(" ")),
         ttl=action_config.get('ttl'),
         max_ttl=action_config.get('max-ttx'))
     hookenv.action_set({'output': new_crt})

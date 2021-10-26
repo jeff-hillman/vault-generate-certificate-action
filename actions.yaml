@@ -158,7 +158,7 @@
     "sans":
       "type": "string"
       "description": >-
-        Subject Altername Name(s)
+        Space delimited list of Subject Altername Name(s)
     "max-ttl":
       "type": "string"
       "default": "8760h"
