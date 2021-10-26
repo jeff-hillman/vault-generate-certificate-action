@@ -1,0 +1,6 @@
+commit-sha-1: b09d5aa6d5bf9755f90d3eaf6accd8ecfe13968c
+commit-short: b09d5aa
+branch: HEAD
+remote: https://opendev.org/openstack/charm-vault
+info-generated: Thu Oct 21 16:54:33 UTC 2021
+note: This file should exist only in a built or released charm artifact (not in the charm source code tree).

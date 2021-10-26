@@ -1,0 +1,79 @@
+# layer:basic
+# pip is pinned to <19.0 to avoid https://github.com/pypa/pip/issues/6164
+# even with installing setuptools before upgrading pip ends up with pip seeing
+# the older setuptools at the system level if include_system_packages is true
+# pip>=18.1,<19.0  # overridden by lockfile-wheelhouse
+# pin Jinja2, PyYAML and MarkupSafe to the last versions supporting python 3.5
+# for trusty
+# Jinja2<=2.10.1  # overridden by lockfile-wheelhouse
+# PyYAML<=5.2  # overridden by lockfile-wheelhouse
+# MarkupSafe<2.0.0  # overridden by lockfile-wheelhouse
+# setuptools<42  # overridden by lockfile-wheelhouse
+# setuptools-scm<=1.17.0  # overridden by lockfile-wheelhouse
+# charmhelpers>=0.4.0,<1.0.0  # overridden by vault
+# charms.reactive>=0.1.0,<2.0.0  # overridden by lockfile-wheelhouse
+# wheel<0.34  # overridden by lockfile-wheelhouse
+# pin netaddr to avoid pulling importlib-resources
+# netaddr<=0.7.19  # overridden by lockfile-wheelhouse
+
+# layer:snap
+# Newer versions of tenacity rely on `typing` which is in stdlib in
+# python3.5 but not python3.4. We want to continue to support
+# python3.4 (Trusty)
+# tenacity<5.0.4  # overridden by vault
+
+# vault
+# netifaces  # overridden by lockfile-wheelhouse
+# hvac<0.7.0  # overridden by lockfile-wheelhouse
+# for xenial support, tenacity 8.0.0+ drops support for py35
+# tenacity<8.0.0  # overridden by lockfile-wheelhouse
+# pbr  # overridden by lockfile-wheelhouse
+# for xenial support, psycopg 2.9.0 drops support for py35
+# psycopg2<2.9.0  # overridden by lockfile-wheelhouse
+# for xenial support, requests 2.26.0 drops support for py35
+# requests<2.26.0  # overridden by lockfile-wheelhouse
+
+
+# psutil  # overridden by lockfile-wheelhouse
+
+# git+https://github.com/openstack/charms.openstack.git@stable/21.10#egg=charms.openstack  # overridden by lockfile-wheelhouse
+
+# git+https://github.com/juju/charm-helpers.git@stable/21.10#egg=charmhelpers  # overridden by lockfile-wheelhouse
+
+# loadbalancer-interface  # overridden by lockfile-wheelhouse
+
+# Bug: https://github.com/canonical/operator/issues/517
+# Pin exclude 1.2.0 as it doesn't work with xenial
+# ops!=1.2.0  # overridden by lockfile-wheelhouse
+
+charms.reactive==1.4.1
+psycopg2==2.8.6
+loadbalancer_interface==1.1.1
+netifaces==0.11.0
+hvac==0.6.4
+pbr==5.6.0
+pip==18.1
+tenacity==7.0.0
+MarkupSafe==1.1.1
+ops_reactive_interface==1.0.1
+wheel==0.33.6
+pyaml==21.10.1
+six==1.16.0
+git+https://github.com/juju/charm-helpers.git@stable/21.10#egg=charmhelpers
+Tempita==0.4
+setuptools==41.6.0
+marshmallow==3.13.0
+requests==2.25.1
+idna==2.10
+git+https://github.com/openstack/charms.openstack.git@stable/21.10#egg=charms.openstack
+Jinja2==2.10.1
+PyYAML==5.2
+setuptools_scm==1.17.0
+marshmallow-enum==1.5.1
+psutil==5.8.0
+urllib3==1.26.7
+cached-property==1.5.2
+netaddr==0.7.19
+ops==1.1.0
+chardet==4.0.0
+certifi==2021.10.8
